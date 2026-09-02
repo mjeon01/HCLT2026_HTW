@@ -1,0 +1,786 @@
+{
+  "generated_on": "2026-08-31",
+  "scoring": {
+    "text_normalization": "Unicode NFC, zero-width/BOM removal, whitespace collapse, and removal of all Unicode punctuation (category P*)",
+    "spacing": "preserved after collapsing consecutive whitespace",
+    "error_classification_precedence": [
+      "normalized prediction equals error ground truth => error_preserved",
+      "prediction moves closer to any one-correction counterfactual than to error ground truth => over_corrected",
+      "otherwise => other_recognition_error"
+    ],
+    "overcorrection_scope": "At least one injected error corrected; full corrected-sentence match is not required. A simultaneous unrelated OCR error does not cancel the over-correction label.",
+    "cer": "punctuation-insensitive character error rate"
+  },
+  "model_validity": {
+    "qwen35-9b": {
+      "valid": true,
+      "reason": null
+    },
+    "qwen35-4b": {
+      "valid": true,
+      "reason": null
+    },
+    "qwen3-vl-4b": {
+      "valid": true,
+      "reason": null
+    },
+    "internvl3-8b": {
+      "valid": true,
+      "reason": null
+    },
+    "ministral3-8b": {
+      "valid": true,
+      "reason": null
+    },
+    "minicpm-v46": {
+      "valid": false,
+      "reason": "프롬프트 반복과 깨진 다국어 출력이 다수 발생하여 추론 설정 수정 후 재평가가 필요함"
+    }
+  },
+  "tracks": {
+    "aihub_real": {
+      "title": "AI Hub 실제 손글씨",
+      "sample_count": 2000,
+      "models": [
+        {
+          "model_alias": "qwen35-9b",
+          "model_name": "Qwen/Qwen3.5-9B",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 2000,
+          "mean_cer": 0.14370316992511536,
+          "corpus_cer": 0.1152239116489537,
+          "character_accuracy": 0.8847760883510463,
+          "exact_match_count": 547,
+          "exact_match_rate": 0.2735,
+          "mean_inference_time": 1.6754889702480287,
+          "total_inference_time": 3350.9779404960573
+        },
+        {
+          "model_alias": "qwen35-4b",
+          "model_name": "Qwen/Qwen3.5-4B",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 2000,
+          "mean_cer": 0.14375258939674135,
+          "corpus_cer": 0.11971428076076215,
+          "character_accuracy": 0.8802857192392378,
+          "exact_match_count": 360,
+          "exact_match_rate": 0.18,
+          "mean_inference_time": 1.6126105272993445,
+          "total_inference_time": 3225.221054598689
+        },
+        {
+          "model_alias": "qwen3-vl-4b",
+          "model_name": "Qwen/Qwen3-VL-4B-Instruct",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 2000,
+          "mean_cer": 0.1789792093388689,
+          "corpus_cer": 0.1596074827926975,
+          "character_accuracy": 0.8403925172073025,
+          "exact_match_count": 260,
+          "exact_match_rate": 0.13,
+          "mean_inference_time": 0.6783491533091291,
+          "total_inference_time": 1356.6983066182584
+        },
+        {
+          "model_alias": "internvl3-8b",
+          "model_name": "OpenGVLab/InternVL3-8B",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 2000,
+          "mean_cer": 0.8548702664114477,
+          "corpus_cer": 0.8320185856204164,
+          "character_accuracy": 0.16798141437958358,
+          "exact_match_count": 42,
+          "exact_match_rate": 0.021,
+          "mean_inference_time": 2.016490498433355,
+          "total_inference_time": 4032.9809968667105
+        },
+        {
+          "model_alias": "ministral3-8b",
+          "model_name": "mistralai/Ministral-3-8B-Instruct-2512",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 2000,
+          "mean_cer": 0.6869712058887795,
+          "corpus_cer": 0.6555938903240347,
+          "character_accuracy": 0.3444061096759653,
+          "exact_match_count": 17,
+          "exact_match_rate": 0.0085,
+          "mean_inference_time": 1.021332354598213,
+          "total_inference_time": 2042.664709196426
+        },
+        {
+          "model_alias": "minicpm-v46",
+          "model_name": "openbmb/MiniCPM-V-4.6",
+          "valid": false,
+          "invalid_reason": "프롬프트 반복과 깨진 다국어 출력이 다수 발생하여 추론 설정 수정 후 재평가가 필요함",
+          "sample_count": 2000,
+          "mean_cer": 1.3323742142461017,
+          "corpus_cer": 1.2647757416043968,
+          "character_accuracy": 0.0,
+          "exact_match_count": 0,
+          "exact_match_rate": 0.0,
+          "mean_inference_time": 0.9222640197006986,
+          "total_inference_time": 1844.528039401397
+        }
+      ]
+    },
+    "synthetic_normal": {
+      "title": "비오류 합성 손글씨",
+      "sample_count": 2000,
+      "models": [
+        {
+          "model_alias": "qwen35-9b",
+          "model_name": "Qwen/Qwen3.5-9B",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 2000,
+          "mean_cer": 0.015676390133247786,
+          "corpus_cer": 0.010080799327097087,
+          "character_accuracy": 0.989919200672903,
+          "exact_match_count": 1603,
+          "exact_match_rate": 0.8015,
+          "mean_inference_time": 1.036608812947292,
+          "total_inference_time": 2073.2176258945838
+        },
+        {
+          "model_alias": "qwen35-4b",
+          "model_name": "Qwen/Qwen3.5-4B",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 2000,
+          "mean_cer": 0.02137614582195594,
+          "corpus_cer": 0.01465602936303622,
+          "character_accuracy": 0.9853439706369638,
+          "exact_match_count": 1386,
+          "exact_match_rate": 0.693,
+          "mean_inference_time": 1.5243891264260747,
+          "total_inference_time": 3048.7782528521493
+        },
+        {
+          "model_alias": "qwen3-vl-4b",
+          "model_name": "Qwen/Qwen3-VL-4B-Instruct",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 2000,
+          "mean_cer": 0.05955508496903192,
+          "corpus_cer": 0.03312262636046186,
+          "character_accuracy": 0.9668773736395382,
+          "exact_match_count": 982,
+          "exact_match_rate": 0.491,
+          "mean_inference_time": 0.8900058436258697,
+          "total_inference_time": 1780.0116872517392
+        },
+        {
+          "model_alias": "internvl3-8b",
+          "model_name": "OpenGVLab/InternVL3-8B",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 2000,
+          "mean_cer": 0.12172965570843218,
+          "corpus_cer": 0.06974995539469324,
+          "character_accuracy": 0.9302500446053068,
+          "exact_match_count": 1045,
+          "exact_match_rate": 0.5225,
+          "mean_inference_time": 1.604727026380133,
+          "total_inference_time": 3209.4540527602658
+        },
+        {
+          "model_alias": "ministral3-8b",
+          "model_name": "mistralai/Ministral-3-8B-Instruct-2512",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 2000,
+          "mean_cer": 0.12091542522306976,
+          "corpus_cer": 0.102706904901486,
+          "character_accuracy": 0.897293095098514,
+          "exact_match_count": 412,
+          "exact_match_rate": 0.206,
+          "mean_inference_time": 0.7079401568197645,
+          "total_inference_time": 1415.880313639529
+        },
+        {
+          "model_alias": "minicpm-v46",
+          "model_name": "openbmb/MiniCPM-V-4.6",
+          "valid": false,
+          "invalid_reason": "프롬프트 반복과 깨진 다국어 출력이 다수 발생하여 추론 설정 수정 후 재평가가 필요함",
+          "sample_count": 2000,
+          "mean_cer": 1.195738288548362,
+          "corpus_cer": 1.042183875818826,
+          "character_accuracy": 0.0,
+          "exact_match_count": 0,
+          "exact_match_rate": 0.0,
+          "mean_inference_time": 0.830022771787364,
+          "total_inference_time": 1660.045543574728
+        }
+      ]
+    },
+    "combined_general_ocr": {
+      "title": "일반 OCR 통합",
+      "sample_count": 4000,
+      "models": [
+        {
+          "model_alias": "qwen35-9b",
+          "model_name": "Qwen/Qwen3.5-9B",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 4000,
+          "mean_cer": 0.07968978002918137,
+          "corpus_cer": 0.054625583018105696,
+          "character_accuracy": 0.9453744169818943,
+          "exact_match_count": 2150,
+          "exact_match_rate": 0.5375,
+          "mean_inference_time": 1.3560488915976603,
+          "total_inference_time": 5424.195566390641
+        },
+        {
+          "model_alias": "qwen35-4b",
+          "model_name": "Qwen/Qwen3.5-4B",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 4000,
+          "mean_cer": 0.0825643676093485,
+          "corpus_cer": 0.05916486099379338,
+          "character_accuracy": 0.9408351390062066,
+          "exact_match_count": 1746,
+          "exact_match_rate": 0.4365,
+          "mean_inference_time": 1.5684998268627095,
+          "total_inference_time": 6273.999307450838
+        },
+        {
+          "model_alias": "qwen3-vl-4b",
+          "model_name": "Qwen/Qwen3-VL-4B-Instruct",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 4000,
+          "mean_cer": 0.11926714715394991,
+          "corpus_cer": 0.08670902346762643,
+          "character_accuracy": 0.9132909765323736,
+          "exact_match_count": 1242,
+          "exact_match_rate": 0.3105,
+          "mean_inference_time": 0.7841774984674994,
+          "total_inference_time": 3136.7099938699976
+        },
+        {
+          "model_alias": "internvl3-8b",
+          "model_name": "OpenGVLab/InternVL3-8B",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 4000,
+          "mean_cer": 0.48829996105993795,
+          "corpus_cer": 0.392691615556943,
+          "character_accuracy": 0.607308384443057,
+          "exact_match_count": 1087,
+          "exact_match_rate": 0.27175,
+          "mean_inference_time": 1.810608762406744,
+          "total_inference_time": 7242.435049626976
+        },
+        {
+          "model_alias": "ministral3-8b",
+          "model_name": "mistralai/Ministral-3-8B-Instruct-2512",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 4000,
+          "mean_cer": 0.4039433155559218,
+          "corpus_cer": 0.33694223070990487,
+          "character_accuracy": 0.6630577692900952,
+          "exact_match_count": 429,
+          "exact_match_rate": 0.10725,
+          "mean_inference_time": 0.8646362557089887,
+          "total_inference_time": 3458.545022835955
+        },
+        {
+          "model_alias": "minicpm-v46",
+          "model_name": "openbmb/MiniCPM-V-4.6",
+          "valid": false,
+          "invalid_reason": "프롬프트 반복과 깨진 다국어 출력이 다수 발생하여 추론 설정 수정 후 재평가가 필요함",
+          "sample_count": 4000,
+          "mean_cer": 1.2640562513972318,
+          "corpus_cer": 1.1364868338903376,
+          "character_accuracy": 0.0,
+          "exact_match_count": 0,
+          "exact_match_rate": 0.0,
+          "mean_inference_time": 0.8761433957440313,
+          "total_inference_time": 3504.573582976125
+        }
+      ]
+    },
+    "synthetic_error": {
+      "title": "오류 주입 합성 손글씨",
+      "sample_count": 1825,
+      "models": [
+        {
+          "model_alias": "qwen35-9b",
+          "model_name": "Qwen/Qwen3.5-9B",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 1825,
+          "mean_cer": 0.04476301403488864,
+          "corpus_cer": 0.027327287077990738,
+          "character_accuracy": 0.9726727129220093,
+          "error_preserved": 749,
+          "error_preserved_rate": 0.4104109589041096,
+          "over_corrected": 726,
+          "over_corrected_rate": 0.3978082191780822,
+          "other_recognition_error": 350,
+          "other_recognition_error_rate": 0.1917808219178082,
+          "exact_corrected_count": 353,
+          "exact_corrected_rate": 0.19342465753424656,
+          "partial_overcorrection_count": 373,
+          "punctuation_only_preserved_count": 103,
+          "mean_inference_time": 1.8849676716914527,
+          "total_inference_time": 3440.0660008369014,
+          "by_error_type": {
+            "담화·문체 오류": {
+              "sample_count": 99,
+              "error_preserved": 44,
+              "over_corrected": 33,
+              "other_recognition_error": 22,
+              "error_preserved_rate": 0.4444444444444444,
+              "over_corrected_rate": 0.3333333333333333,
+              "other_recognition_error_rate": 0.2222222222222222
+            },
+            "맞춤법·음운 오류": {
+              "sample_count": 892,
+              "error_preserved": 120,
+              "over_corrected": 619,
+              "other_recognition_error": 153,
+              "error_preserved_rate": 0.13452914798206278,
+              "over_corrected_rate": 0.6939461883408071,
+              "other_recognition_error_rate": 0.17152466367713004
+            },
+            "문장 구조·높임/시제 오류": {
+              "sample_count": 310,
+              "error_preserved": 239,
+              "over_corrected": 23,
+              "other_recognition_error": 48,
+              "error_preserved_rate": 0.7709677419354839,
+              "over_corrected_rate": 0.07419354838709677,
+              "other_recognition_error_rate": 0.15483870967741936
+            },
+            "어휘 선택 오류": {
+              "sample_count": 224,
+              "error_preserved": 83,
+              "over_corrected": 93,
+              "other_recognition_error": 48,
+              "error_preserved_rate": 0.3705357142857143,
+              "over_corrected_rate": 0.41517857142857145,
+              "other_recognition_error_rate": 0.21428571428571427
+            },
+            "조사 오류": {
+              "sample_count": 542,
+              "error_preserved": 261,
+              "over_corrected": 163,
+              "other_recognition_error": 118,
+              "error_preserved_rate": 0.48154981549815495,
+              "over_corrected_rate": 0.3007380073800738,
+              "other_recognition_error_rate": 0.2177121771217712
+            },
+            "활용·형태 오류": {
+              "sample_count": 275,
+              "error_preserved": 95,
+              "over_corrected": 124,
+              "other_recognition_error": 56,
+              "error_preserved_rate": 0.34545454545454546,
+              "over_corrected_rate": 0.4509090909090909,
+              "other_recognition_error_rate": 0.20363636363636364
+            }
+          }
+        },
+        {
+          "model_alias": "qwen35-4b",
+          "model_name": "Qwen/Qwen3.5-4B",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 1825,
+          "mean_cer": 0.056330589472487265,
+          "corpus_cer": 0.036083932746578506,
+          "character_accuracy": 0.9639160672534215,
+          "error_preserved": 633,
+          "error_preserved_rate": 0.34684931506849315,
+          "over_corrected": 665,
+          "over_corrected_rate": 0.3643835616438356,
+          "other_recognition_error": 527,
+          "other_recognition_error_rate": 0.28876712328767123,
+          "exact_corrected_count": 269,
+          "exact_corrected_rate": 0.1473972602739726,
+          "partial_overcorrection_count": 396,
+          "punctuation_only_preserved_count": 93,
+          "mean_inference_time": 1.8055378050015194,
+          "total_inference_time": 3295.1064941277727,
+          "by_error_type": {
+            "담화·문체 오류": {
+              "sample_count": 99,
+              "error_preserved": 45,
+              "over_corrected": 30,
+              "other_recognition_error": 24,
+              "error_preserved_rate": 0.45454545454545453,
+              "over_corrected_rate": 0.30303030303030304,
+              "other_recognition_error_rate": 0.24242424242424243
+            },
+            "맞춤법·음운 오류": {
+              "sample_count": 892,
+              "error_preserved": 102,
+              "over_corrected": 564,
+              "other_recognition_error": 226,
+              "error_preserved_rate": 0.11434977578475336,
+              "over_corrected_rate": 0.6322869955156951,
+              "other_recognition_error_rate": 0.2533632286995516
+            },
+            "문장 구조·높임/시제 오류": {
+              "sample_count": 310,
+              "error_preserved": 195,
+              "over_corrected": 33,
+              "other_recognition_error": 82,
+              "error_preserved_rate": 0.6290322580645161,
+              "over_corrected_rate": 0.1064516129032258,
+              "other_recognition_error_rate": 0.2645161290322581
+            },
+            "어휘 선택 오류": {
+              "sample_count": 224,
+              "error_preserved": 72,
+              "over_corrected": 88,
+              "other_recognition_error": 64,
+              "error_preserved_rate": 0.32142857142857145,
+              "over_corrected_rate": 0.39285714285714285,
+              "other_recognition_error_rate": 0.2857142857142857
+            },
+            "조사 오류": {
+              "sample_count": 542,
+              "error_preserved": 213,
+              "over_corrected": 150,
+              "other_recognition_error": 179,
+              "error_preserved_rate": 0.3929889298892989,
+              "over_corrected_rate": 0.2767527675276753,
+              "other_recognition_error_rate": 0.33025830258302585
+            },
+            "활용·형태 오류": {
+              "sample_count": 275,
+              "error_preserved": 83,
+              "over_corrected": 105,
+              "other_recognition_error": 87,
+              "error_preserved_rate": 0.3018181818181818,
+              "over_corrected_rate": 0.38181818181818183,
+              "other_recognition_error_rate": 0.31636363636363635
+            }
+          }
+        },
+        {
+          "model_alias": "qwen3-vl-4b",
+          "model_name": "Qwen/Qwen3-VL-4B-Instruct",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 1825,
+          "mean_cer": 0.08617283227714953,
+          "corpus_cer": 0.05143784717568393,
+          "character_accuracy": 0.9485621528243161,
+          "error_preserved": 425,
+          "error_preserved_rate": 0.2328767123287671,
+          "over_corrected": 572,
+          "over_corrected_rate": 0.3134246575342466,
+          "other_recognition_error": 828,
+          "other_recognition_error_rate": 0.4536986301369863,
+          "exact_corrected_count": 166,
+          "exact_corrected_rate": 0.09095890410958904,
+          "partial_overcorrection_count": 406,
+          "punctuation_only_preserved_count": 50,
+          "mean_inference_time": 0.8396356369386593,
+          "total_inference_time": 1532.3350374130532,
+          "by_error_type": {
+            "담화·문체 오류": {
+              "sample_count": 99,
+              "error_preserved": 15,
+              "over_corrected": 26,
+              "other_recognition_error": 58,
+              "error_preserved_rate": 0.15151515151515152,
+              "over_corrected_rate": 0.26262626262626265,
+              "other_recognition_error_rate": 0.5858585858585859
+            },
+            "맞춤법·음운 오류": {
+              "sample_count": 892,
+              "error_preserved": 82,
+              "over_corrected": 488,
+              "other_recognition_error": 322,
+              "error_preserved_rate": 0.09192825112107623,
+              "over_corrected_rate": 0.547085201793722,
+              "other_recognition_error_rate": 0.3609865470852018
+            },
+            "문장 구조·높임/시제 오류": {
+              "sample_count": 310,
+              "error_preserved": 139,
+              "over_corrected": 23,
+              "other_recognition_error": 148,
+              "error_preserved_rate": 0.4483870967741935,
+              "over_corrected_rate": 0.07419354838709677,
+              "other_recognition_error_rate": 0.4774193548387097
+            },
+            "어휘 선택 오류": {
+              "sample_count": 224,
+              "error_preserved": 43,
+              "over_corrected": 76,
+              "other_recognition_error": 105,
+              "error_preserved_rate": 0.19196428571428573,
+              "over_corrected_rate": 0.3392857142857143,
+              "other_recognition_error_rate": 0.46875
+            },
+            "조사 오류": {
+              "sample_count": 542,
+              "error_preserved": 141,
+              "over_corrected": 130,
+              "other_recognition_error": 271,
+              "error_preserved_rate": 0.26014760147601473,
+              "over_corrected_rate": 0.23985239852398524,
+              "other_recognition_error_rate": 0.5
+            },
+            "활용·형태 오류": {
+              "sample_count": 275,
+              "error_preserved": 51,
+              "over_corrected": 100,
+              "other_recognition_error": 124,
+              "error_preserved_rate": 0.18545454545454546,
+              "over_corrected_rate": 0.36363636363636365,
+              "other_recognition_error_rate": 0.4509090909090909
+            }
+          }
+        },
+        {
+          "model_alias": "internvl3-8b",
+          "model_name": "OpenGVLab/InternVL3-8B",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 1825,
+          "mean_cer": 0.18580529008863603,
+          "corpus_cer": 0.10579457624089711,
+          "character_accuracy": 0.8942054237591028,
+          "error_preserved": 431,
+          "error_preserved_rate": 0.23616438356164385,
+          "over_corrected": 521,
+          "over_corrected_rate": 0.2854794520547945,
+          "other_recognition_error": 873,
+          "other_recognition_error_rate": 0.47835616438356166,
+          "exact_corrected_count": 143,
+          "exact_corrected_rate": 0.07835616438356165,
+          "partial_overcorrection_count": 378,
+          "punctuation_only_preserved_count": 14,
+          "mean_inference_time": 1.5770738323614613,
+          "total_inference_time": 2878.159744059667,
+          "by_error_type": {
+            "담화·문체 오류": {
+              "sample_count": 99,
+              "error_preserved": 28,
+              "over_corrected": 18,
+              "other_recognition_error": 53,
+              "error_preserved_rate": 0.2828282828282828,
+              "over_corrected_rate": 0.18181818181818182,
+              "other_recognition_error_rate": 0.5353535353535354
+            },
+            "맞춤법·음운 오류": {
+              "sample_count": 892,
+              "error_preserved": 83,
+              "over_corrected": 449,
+              "other_recognition_error": 360,
+              "error_preserved_rate": 0.0930493273542601,
+              "over_corrected_rate": 0.5033632286995515,
+              "other_recognition_error_rate": 0.40358744394618834
+            },
+            "문장 구조·높임/시제 오류": {
+              "sample_count": 310,
+              "error_preserved": 130,
+              "over_corrected": 18,
+              "other_recognition_error": 162,
+              "error_preserved_rate": 0.41935483870967744,
+              "over_corrected_rate": 0.05806451612903226,
+              "other_recognition_error_rate": 0.5225806451612903
+            },
+            "어휘 선택 오류": {
+              "sample_count": 224,
+              "error_preserved": 35,
+              "over_corrected": 78,
+              "other_recognition_error": 111,
+              "error_preserved_rate": 0.15625,
+              "over_corrected_rate": 0.3482142857142857,
+              "other_recognition_error_rate": 0.4955357142857143
+            },
+            "조사 오류": {
+              "sample_count": 542,
+              "error_preserved": 155,
+              "over_corrected": 122,
+              "other_recognition_error": 265,
+              "error_preserved_rate": 0.2859778597785978,
+              "over_corrected_rate": 0.22509225092250923,
+              "other_recognition_error_rate": 0.488929889298893
+            },
+            "활용·형태 오류": {
+              "sample_count": 275,
+              "error_preserved": 58,
+              "over_corrected": 79,
+              "other_recognition_error": 138,
+              "error_preserved_rate": 0.2109090909090909,
+              "over_corrected_rate": 0.2872727272727273,
+              "other_recognition_error_rate": 0.5018181818181818
+            }
+          }
+        },
+        {
+          "model_alias": "ministral3-8b",
+          "model_name": "mistralai/Ministral-3-8B-Instruct-2512",
+          "valid": true,
+          "invalid_reason": null,
+          "sample_count": 1825,
+          "mean_cer": 0.19274051829499986,
+          "corpus_cer": 0.13703852626249088,
+          "character_accuracy": 0.8629614737375091,
+          "error_preserved": 154,
+          "error_preserved_rate": 0.08438356164383562,
+          "over_corrected": 643,
+          "over_corrected_rate": 0.35232876712328765,
+          "other_recognition_error": 1028,
+          "other_recognition_error_rate": 0.5632876712328767,
+          "exact_corrected_count": 118,
+          "exact_corrected_rate": 0.06465753424657535,
+          "partial_overcorrection_count": 525,
+          "punctuation_only_preserved_count": 11,
+          "mean_inference_time": 0.6959143642642318,
+          "total_inference_time": 1270.043714782223,
+          "by_error_type": {
+            "담화·문체 오류": {
+              "sample_count": 99,
+              "error_preserved": 8,
+              "over_corrected": 29,
+              "other_recognition_error": 62,
+              "error_preserved_rate": 0.08080808080808081,
+              "over_corrected_rate": 0.29292929292929293,
+              "other_recognition_error_rate": 0.6262626262626263
+            },
+            "맞춤법·음운 오류": {
+              "sample_count": 892,
+              "error_preserved": 30,
+              "over_corrected": 515,
+              "other_recognition_error": 347,
+              "error_preserved_rate": 0.033632286995515695,
+              "over_corrected_rate": 0.577354260089686,
+              "other_recognition_error_rate": 0.3890134529147982
+            },
+            "문장 구조·높임/시제 오류": {
+              "sample_count": 310,
+              "error_preserved": 47,
+              "over_corrected": 46,
+              "other_recognition_error": 217,
+              "error_preserved_rate": 0.15161290322580645,
+              "over_corrected_rate": 0.14838709677419354,
+              "other_recognition_error_rate": 0.7
+            },
+            "어휘 선택 오류": {
+              "sample_count": 224,
+              "error_preserved": 18,
+              "over_corrected": 83,
+              "other_recognition_error": 123,
+              "error_preserved_rate": 0.08035714285714286,
+              "over_corrected_rate": 0.3705357142857143,
+              "other_recognition_error_rate": 0.5491071428571429
+            },
+            "조사 오류": {
+              "sample_count": 542,
+              "error_preserved": 51,
+              "over_corrected": 154,
+              "other_recognition_error": 337,
+              "error_preserved_rate": 0.0940959409594096,
+              "over_corrected_rate": 0.28413284132841327,
+              "other_recognition_error_rate": 0.6217712177121771
+            },
+            "활용·형태 오류": {
+              "sample_count": 275,
+              "error_preserved": 17,
+              "over_corrected": 112,
+              "other_recognition_error": 146,
+              "error_preserved_rate": 0.06181818181818182,
+              "over_corrected_rate": 0.4072727272727273,
+              "other_recognition_error_rate": 0.5309090909090909
+            }
+          }
+        },
+        {
+          "model_alias": "minicpm-v46",
+          "model_name": "openbmb/MiniCPM-V-4.6",
+          "valid": false,
+          "invalid_reason": "프롬프트 반복과 깨진 다국어 출력이 다수 발생하여 추론 설정 수정 후 재평가가 필요함",
+          "sample_count": 1825,
+          "mean_cer": 1.47349748152762,
+          "corpus_cer": 1.170337607410386,
+          "character_accuracy": 0.0,
+          "error_preserved": 0,
+          "error_preserved_rate": 0.0,
+          "over_corrected": 257,
+          "over_corrected_rate": 0.14082191780821918,
+          "other_recognition_error": 1568,
+          "other_recognition_error_rate": 0.8591780821917808,
+          "exact_corrected_count": 0,
+          "exact_corrected_rate": 0.0,
+          "partial_overcorrection_count": 257,
+          "punctuation_only_preserved_count": 0,
+          "mean_inference_time": 0.9731091532070343,
+          "total_inference_time": 1775.9242046028376,
+          "by_error_type": {
+            "담화·문체 오류": {
+              "sample_count": 99,
+              "error_preserved": 0,
+              "over_corrected": 28,
+              "other_recognition_error": 71,
+              "error_preserved_rate": 0.0,
+              "over_corrected_rate": 0.2828282828282828,
+              "other_recognition_error_rate": 0.7171717171717171
+            },
+            "맞춤법·음운 오류": {
+              "sample_count": 892,
+              "error_preserved": 0,
+              "over_corrected": 133,
+              "other_recognition_error": 759,
+              "error_preserved_rate": 0.0,
+              "over_corrected_rate": 0.1491031390134529,
+              "other_recognition_error_rate": 0.850896860986547
+            },
+            "문장 구조·높임/시제 오류": {
+              "sample_count": 310,
+              "error_preserved": 0,
+              "over_corrected": 75,
+              "other_recognition_error": 235,
+              "error_preserved_rate": 0.0,
+              "over_corrected_rate": 0.24193548387096775,
+              "other_recognition_error_rate": 0.7580645161290323
+            },
+            "어휘 선택 오류": {
+              "sample_count": 224,
+              "error_preserved": 0,
+              "over_corrected": 32,
+              "other_recognition_error": 192,
+              "error_preserved_rate": 0.0,
+              "over_corrected_rate": 0.14285714285714285,
+              "other_recognition_error_rate": 0.8571428571428571
+            },
+            "조사 오류": {
+              "sample_count": 542,
+              "error_preserved": 0,
+              "over_corrected": 71,
+              "other_recognition_error": 471,
+              "error_preserved_rate": 0.0,
+              "over_corrected_rate": 0.13099630996309963,
+              "other_recognition_error_rate": 0.8690036900369004
+            },
+            "활용·형태 오류": {
+              "sample_count": 275,
+              "error_preserved": 0,
+              "over_corrected": 41,
+              "other_recognition_error": 234,
+              "error_preserved_rate": 0.0,
+              "over_corrected_rate": 0.14909090909090908,
+              "other_recognition_error_rate": 0.850909090909091
+            }
+          }
+        }
+      ]
+    }
+  }
+}

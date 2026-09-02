@@ -1,0 +1,45 @@
+setting: D
+model_name: Qwen/Qwen3.5-4B
+local_files_only: true
+train_mode: projector_lora
+
+train_normal_manifest: data/overcorrection/train_normal.jsonl
+train_error_manifest: data/overcorrection/train_error.jsonl
+validation_manifest: data/overcorrection/validation.jsonl
+leakage_report: data/overcorrection/leakage_report.json
+instruction: 이미지에 작성된 한국어 문장을 맞춤법이나 문법을 수정하지 말고 그대로 전사하세요.
+
+error_sampling_ratio: 0.67
+max_steps: 2500
+sanity_steps: 20
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 16
+gradient_checkpointing: true
+bf16: true
+attn_implementation: sdpa
+
+lora_learning_rate: 1.0e-4
+projector_learning_rate: 1.0e-3
+lora:
+  r: 64
+  alpha: 128
+  dropout: 0.05
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+
+weight_decay: 0.01
+adam_betas: [0.9, 0.999]
+adam_epsilon: 1.0e-8
+warmup_ratio: 0.03
+max_grad_norm: 1.0
+logging_steps: 1
+save_steps: 250
+validation_max_samples: 128
+seed: 42
+output_dir: outputs/overcorrection/D

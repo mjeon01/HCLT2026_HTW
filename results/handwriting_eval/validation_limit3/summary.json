@@ -1,0 +1,86 @@
+{
+  "dataset": "data/benchmark/eval_handwriting_2000.jsonl",
+  "target_sample_count": 2000,
+  "prompt": "손글씨 이미지에 작성된 내용을 그대로 텍스트로 인식하세요.\n이미지에 보이는 내용만 출력하세요.",
+  "timing": "Seconds per image; includes image preprocessing, generation, and decoding; excludes model loading, scoring, and file writing.",
+  "models": [
+    {
+      "sample_count": 3,
+      "mean_cer": 0.2341269841269841,
+      "corpus_cer": 0.11290322580645161,
+      "character_accuracy": 0.8870967741935484,
+      "exact_match_count": 1,
+      "exact_match_rate": 0.3333333333333333,
+      "mean_inference_time": 0.9831641394024094,
+      "total_inference_time": 2.949492418207228,
+      "model_alias": "qwen35-9b",
+      "model_name": "Qwen/Qwen3.5-9B",
+      "result_file": "results/handwriting_eval/qwen35_9b_results.jsonl"
+    },
+    {
+      "sample_count": 3,
+      "mean_cer": 0.2375415282392027,
+      "corpus_cer": 0.16129032258064516,
+      "character_accuracy": 0.8387096774193549,
+      "exact_match_count": 0,
+      "exact_match_rate": 0.0,
+      "mean_inference_time": 1.034633278225859,
+      "total_inference_time": 3.103899834677577,
+      "model_alias": "qwen35-4b",
+      "model_name": "Qwen/Qwen3.5-4B",
+      "result_file": "results/handwriting_eval/qwen35_4b_results.jsonl"
+    },
+    {
+      "sample_count": 3,
+      "mean_cer": 0.10981912144702843,
+      "corpus_cer": 0.14516129032258066,
+      "character_accuracy": 0.8548387096774194,
+      "exact_match_count": 1,
+      "exact_match_rate": 0.3333333333333333,
+      "mean_inference_time": 1.0147203356027603,
+      "total_inference_time": 3.044161006808281,
+      "model_alias": "qwen3-vl-4b",
+      "model_name": "Qwen/Qwen3-VL-4B-Instruct",
+      "result_file": "results/handwriting_eval/qwen3_vl_4b_results.jsonl"
+    },
+    {
+      "sample_count": 3,
+      "mean_cer": 1.83859357696567,
+      "corpus_cer": 1.4516129032258065,
+      "character_accuracy": 0.0,
+      "exact_match_count": 0,
+      "exact_match_rate": 0.0,
+      "mean_inference_time": 1.0572463516145945,
+      "total_inference_time": 3.1717390548437834,
+      "model_alias": "internvl3-8b",
+      "model_name": "OpenGVLab/InternVL3-8B",
+      "result_file": "results/handwriting_eval/internvl3_8b_results.jsonl"
+    },
+    {
+      "sample_count": 3,
+      "mean_cer": 0.5380214101144334,
+      "corpus_cer": 0.3709677419354839,
+      "character_accuracy": 0.6290322580645161,
+      "exact_match_count": 0,
+      "exact_match_rate": 0.0,
+      "mean_inference_time": 0.6577060706913471,
+      "total_inference_time": 1.9731182120740414,
+      "model_alias": "ministral3-8b",
+      "model_name": "mistralai/Ministral-3-8B-Instruct-2512",
+      "result_file": "results/handwriting_eval/ministral3_8b_results.jsonl"
+    },
+    {
+      "sample_count": 3,
+      "mean_cer": 0.8578811369509044,
+      "corpus_cer": 0.8709677419354839,
+      "character_accuracy": 0.12903225806451613,
+      "exact_match_count": 0,
+      "exact_match_rate": 0.0,
+      "mean_inference_time": 0.7877261533091465,
+      "total_inference_time": 2.3631784599274397,
+      "model_alias": "minicpm-v46",
+      "model_name": "openbmb/MiniCPM-V-4.6",
+      "result_file": "results/handwriting_eval/minicpm_v46_results.jsonl"
+    }
+  ]
+}

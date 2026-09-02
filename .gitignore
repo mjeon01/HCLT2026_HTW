@@ -1,0 +1,85 @@
+# Python bytecode and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+env/
+
+# Test, lint, and type-check caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Keep only the repository README among Markdown documents
+*.md
+!/README.md
+
+# Raw and generated datasets (large and potentially sensitive)
+/data/
+
+# Training checkpoints, evaluation outputs, and logs
+/outputs/
+/logs/
+/wandb/
+/runs/
+checkpoint-*/
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+events.out.tfevents.*
+slurm-*.out
+# Keep compact JSON metrics/summaries, but exclude bulky evaluation artifacts
+/results/overcorrection/50_50_40000/metrics.json
+/results/**/*.jsonl
+/results/**/*.log
+/results/**/*.html
+/results/**/*.png
+/results/**/*.svg
+
+
+# Local AI Hub downloader
+/aihubshell
+
+# Downloaded archives and temporary files
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.tmp
+*.temp
+*.log

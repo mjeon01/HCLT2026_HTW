@@ -1,0 +1,86 @@
+{
+  "dataset": "data/benchmark/eval_synthetic_normal_2000.jsonl",
+  "target_sample_count": 2000,
+  "prompt": "손글씨 이미지에 작성된 내용을 그대로 텍스트로 인식하세요.\n이미지에 보이는 내용만 출력하세요.",
+  "timing": "Seconds per image; includes image preprocessing, generation, and decoding; excludes model loading, scoring, and file writing.",
+  "models": [
+    {
+      "sample_count": 2000,
+      "mean_cer": 0.020613328977517286,
+      "corpus_cer": 0.014591451646609055,
+      "character_accuracy": 0.985408548353391,
+      "exact_match_count": 1380,
+      "exact_match_rate": 0.69,
+      "mean_inference_time": 1.036608812947292,
+      "total_inference_time": 2073.2176258945838,
+      "model_alias": "qwen35-9b",
+      "model_name": "Qwen/Qwen3.5-9B",
+      "result_file": "results/synthetic_normal_eval/qwen35_9b_results.jsonl"
+    },
+    {
+      "sample_count": 2000,
+      "mean_cer": 0.026656751520163557,
+      "corpus_cer": 0.020430490848074346,
+      "character_accuracy": 0.9795695091519256,
+      "exact_match_count": 1152,
+      "exact_match_rate": 0.576,
+      "mean_inference_time": 1.5243891264260747,
+      "total_inference_time": 3048.7782528521493,
+      "model_alias": "qwen35-4b",
+      "model_name": "Qwen/Qwen3.5-4B",
+      "result_file": "results/synthetic_normal_eval/qwen35_4b_results.jsonl"
+    },
+    {
+      "sample_count": 2000,
+      "mean_cer": 0.06367768512122486,
+      "corpus_cer": 0.03721004560596934,
+      "character_accuracy": 0.9627899543940307,
+      "exact_match_count": 882,
+      "exact_match_rate": 0.441,
+      "mean_inference_time": 0.8900058436258697,
+      "total_inference_time": 1780.0116872517392,
+      "model_alias": "qwen3-vl-4b",
+      "model_name": "Qwen/Qwen3-VL-4B-Instruct",
+      "result_file": "results/synthetic_normal_eval/qwen3_vl_4b_results.jsonl"
+    },
+    {
+      "sample_count": 2000,
+      "mean_cer": 0.13485994959802672,
+      "corpus_cer": 0.07702614660290846,
+      "character_accuracy": 0.9229738533970915,
+      "exact_match_count": 1011,
+      "exact_match_rate": 0.5055,
+      "mean_inference_time": 1.604727026380133,
+      "total_inference_time": 3209.4540527602658,
+      "model_alias": "internvl3-8b",
+      "model_name": "OpenGVLab/InternVL3-8B",
+      "result_file": "results/synthetic_normal_eval/internvl3_8b_results.jsonl"
+    },
+    {
+      "sample_count": 2000,
+      "mean_cer": 0.1196190929184118,
+      "corpus_cer": 0.10332026208066479,
+      "character_accuracy": 0.8966797379193352,
+      "exact_match_count": 390,
+      "exact_match_rate": 0.195,
+      "mean_inference_time": 0.7079401568197645,
+      "total_inference_time": 1415.880313639529,
+      "model_alias": "ministral3-8b",
+      "model_name": "mistralai/Ministral-3-8B-Instruct-2512",
+      "result_file": "results/synthetic_normal_eval/ministral3_8b_results.jsonl"
+    },
+    {
+      "sample_count": 2000,
+      "mean_cer": 1.2648195380691118,
+      "corpus_cer": 1.0823857699541481,
+      "character_accuracy": 0.0,
+      "exact_match_count": 0,
+      "exact_match_rate": 0.0,
+      "mean_inference_time": 0.830022771787364,
+      "total_inference_time": 1660.045543574728,
+      "model_alias": "minicpm-v46",
+      "model_name": "openbmb/MiniCPM-V-4.6",
+      "result_file": "results/synthetic_normal_eval/minicpm_v46_results.jsonl"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "dataset": "aihub_real",
+  "manifest": "data/benchmark/eval_handwriting_2000.jsonl",
+  "checkpoint": "outputs/overcorrection/50_50_40000/final",
+  "instruction": "이미지에 작성된 한국어 문장을 맞춤법이나 문법을 수정하지 말고 그대로 전사하세요.",
+  "scoring": "Unicode NFC, whitespace-collapsed, punctuation-insensitive character error rate",
+  "sample_count": 2000,
+  "mean_cer": 0.19665934395374116,
+  "corpus_cer": 0.18585620416442727,
+  "character_accuracy": 0.8141437958355727,
+  "exact_match_count": 156,
+  "exact_match_rate": 0.078,
+  "total_distance": 10720,
+  "total_characters": 57679,
+  "mean_inference_time": 0.7274169072373771,
+  "total_inference_time": 1454.833814474754
+}

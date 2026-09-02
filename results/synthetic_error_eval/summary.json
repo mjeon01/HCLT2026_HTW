@@ -1,0 +1,7 @@
+{
+  "dataset": "data/benchmark/eval_synthetic_error_2000.jsonl",
+  "target_sample_count": 1825,
+  "prompt": "손글씨 이미지에 작성된 내용을 그대로 텍스트로 인식하세요.\n이미지에 보이는 내용만 출력하세요.",
+  "timing": "Seconds per image; includes image preprocessing, generation, and decoding; excludes model loading, scoring, and file writing.",
+  "models": []
+}

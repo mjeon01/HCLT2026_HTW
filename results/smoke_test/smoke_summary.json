@@ -1,0 +1,695 @@
+{
+  "seed": 42,
+  "target_sample_count": 100,
+  "classification_rule": "strict: prediction==ground_truth => error_preserved; prediction==corrected_text => over_corrected; otherwise recognition_error",
+  "models": [
+    {
+      "model_name": "Qwen/Qwen3.5-9B",
+      "sample_count": 100,
+      "exact_match": 36,
+      "exact_match_rate": 0.36,
+      "error_preserved": 36,
+      "error_preserved_rate": 0.36,
+      "over_corrected": 17,
+      "over_corrected_rate": 0.17,
+      "recognition_error": 47,
+      "recognition_error_rate": 0.47,
+      "mean_cer": 0.06445112594016297,
+      "by_error_type": {
+        "담화·문체 오류": {
+          "total": 4,
+          "recognition_error": 2,
+          "error_preserved": 2,
+          "over_correction_rate": 0.0
+        },
+        "맞춤법·음운 오류": {
+          "total": 52,
+          "recognition_error": 32,
+          "over_corrected": 15,
+          "error_preserved": 5,
+          "over_correction_rate": 0.28846153846153844
+        },
+        "문장 구조·높임/시제 오류": {
+          "total": 14,
+          "error_preserved": 12,
+          "recognition_error": 2,
+          "over_correction_rate": 0.0
+        },
+        "어휘 선택 오류": {
+          "total": 12,
+          "recognition_error": 7,
+          "error_preserved": 5,
+          "over_correction_rate": 0.0
+        },
+        "조사 오류": {
+          "total": 29,
+          "recognition_error": 17,
+          "error_preserved": 12,
+          "over_correction_rate": 0.0
+        },
+        "활용·형태 오류": {
+          "total": 17,
+          "recognition_error": 8,
+          "over_corrected": 2,
+          "error_preserved": 7,
+          "over_correction_rate": 0.11764705882352941
+        }
+      },
+      "over_correction_examples": [
+        {
+          "id": "000052",
+          "ground_truth": "그러나 그 정지 속에서 오히려 일상의 소중함을 깨닫게 되다.",
+          "prediction": "그러나 그 정지 속에서 오히려 일상의 소중함을 깨닫게 된다.",
+          "corrected_text": "그러나 그 정지 속에서 오히려 일상의 소중함을 깨닫게 된다.",
+          "error_type": [
+            "활용·형태 오류"
+          ]
+        },
+        {
+          "id": "000179",
+          "ground_truth": "그래서 새 노트북을 싸야 해요.",
+          "prediction": "그래서 새 노트북을 사야 해요.",
+          "corrected_text": "그래서 새 노트북을 사야 해요.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "001210",
+          "ground_truth": "선쌩님이 질문을 했어요.",
+          "prediction": "선생님이 질문을 했어요.",
+          "corrected_text": "선생님이 질문을 했어요.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000192",
+          "ground_truth": "바가 와서 우산 들고 편한 지갑으로 버스 탔어요.",
+          "prediction": "비가 와서 우산 들고 편한 지갑으로 버스 탔어요.",
+          "corrected_text": "비가 와서 우산 들고 편한 지갑으로 버스 탔어요.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000448",
+          "ground_truth": "일쩍 자야 해.",
+          "prediction": "일찍 자야 해.",
+          "corrected_text": "일찍 자야 해.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "001233",
+          "ground_truth": "서울의 봄은 벚꽃이 피는는 순간부터 시작된다.",
+          "prediction": "서울의 봄은 벚꽃이 피는 순간부터 시작된다.",
+          "corrected_text": "서울의 봄은 벚꽃이 피는 순간부터 시작된다.",
+          "error_type": [
+            "활용·형태 오류"
+          ]
+        },
+        {
+          "id": "001467",
+          "ground_truth": "최근 인공지능과 양자컴퓨팅의 융합이 가속화되면서, 과학기술의 집대성이 새로운 국면에 접어들고 있드는 인상을 받아요.",
+          "prediction": "최근 인공지능과 양자컴퓨팅의 융합이 가속화되면서, 과학기술의 집대성이 새로운 국면에 접어들고 있다는 인상을 받아요.",
+          "corrected_text": "최근 인공지능과 양자컴퓨팅의 융합이 가속화되면서, 과학기술의 집대성이 새로운 국면에 접어들고 있다는 인상을 받아요.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "001331",
+          "ground_truth": "얼머 전 영어 시험을 준비하면서 겪은 당혹스러운 경험이 떠오른다.",
+          "prediction": "얼마 전 영어 시험을 준비하면서 겪은 당혹스러운 경험이 떠오른다.",
+          "corrected_text": "얼마 전 영어 시험을 준비하면서 겪은 당혹스러운 경험이 떠오른다.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000920",
+          "ground_truth": "컴퓨터카 학교 도서관에 있어",
+          "prediction": "컴퓨터가 학교 도서관에 있어",
+          "corrected_text": "컴퓨터가 학교 도서관에 있어",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000190",
+          "ground_truth": "한국에 아서 처음에는 혼자 모든 걸 해결하려고 했다.",
+          "prediction": "한국에 와서 처음에는 혼자 모든 걸 해결하려고 했다.",
+          "corrected_text": "한국에 와서 처음에는 혼자 모든 걸 해결하려고 했다.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        }
+      ]
+    },
+    {
+      "model_name": "Qwen/Qwen3.5-4B",
+      "sample_count": 100,
+      "exact_match": 25,
+      "exact_match_rate": 0.25,
+      "error_preserved": 25,
+      "error_preserved_rate": 0.25,
+      "over_corrected": 15,
+      "over_corrected_rate": 0.15,
+      "recognition_error": 60,
+      "recognition_error_rate": 0.6,
+      "mean_cer": 0.08518559547967117,
+      "by_error_type": {
+        "담화·문체 오류": {
+          "total": 4,
+          "recognition_error": 2,
+          "error_preserved": 2,
+          "over_correction_rate": 0.0
+        },
+        "맞춤법·음운 오류": {
+          "total": 52,
+          "recognition_error": 36,
+          "over_corrected": 13,
+          "error_preserved": 3,
+          "over_correction_rate": 0.25
+        },
+        "문장 구조·높임/시제 오류": {
+          "total": 14,
+          "recognition_error": 6,
+          "over_corrected": 1,
+          "error_preserved": 7,
+          "over_correction_rate": 0.07142857142857142
+        },
+        "어휘 선택 오류": {
+          "total": 12,
+          "recognition_error": 9,
+          "error_preserved": 3,
+          "over_correction_rate": 0.0
+        },
+        "조사 오류": {
+          "total": 29,
+          "recognition_error": 19,
+          "error_preserved": 10,
+          "over_correction_rate": 0.0
+        },
+        "활용·형태 오류": {
+          "total": 17,
+          "recognition_error": 12,
+          "error_preserved": 4,
+          "over_corrected": 1,
+          "over_correction_rate": 0.058823529411764705
+        }
+      },
+      "over_correction_examples": [
+        {
+          "id": "000286",
+          "ground_truth": "저는 요즘 집안일을 도와주는 로봇에 관심이 많았어요.",
+          "prediction": "저는 요즘 집안일을 도와주는 로봇에 관심이 많아요.",
+          "corrected_text": "저는 요즘 집안일을 도와주는 로봇에 관심이 많아요.",
+          "error_type": [
+            "문장 구조·높임/시제 오류"
+          ]
+        },
+        {
+          "id": "000179",
+          "ground_truth": "그래서 새 노트북을 싸야 해요.",
+          "prediction": "그래서 새 노트북을 사야 해요.",
+          "corrected_text": "그래서 새 노트북을 사야 해요.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "001210",
+          "ground_truth": "선쌩님이 질문을 했어요.",
+          "prediction": "선생님이 질문을 했어요.",
+          "corrected_text": "선생님이 질문을 했어요.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000448",
+          "ground_truth": "일쩍 자야 해.",
+          "prediction": "일찍 자야 해.",
+          "corrected_text": "일찍 자야 해.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000477",
+          "ground_truth": "이렇게 하면 신입 직원도 실수룰 줄일 수 있고, 상사도 설명을 다시 해 주십니다.",
+          "prediction": "이렇게 하면 신입 직원도 실수를 줄일 수 있고, 상사도 설명을 다시 해 주십니다.",
+          "corrected_text": "이렇게 하면 신입 직원도 실수를 줄일 수 있고, 상사도 설명을 다시 해 주십니다.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "001331",
+          "ground_truth": "얼머 전 영어 시험을 준비하면서 겪은 당혹스러운 경험이 떠오른다.",
+          "prediction": "얼마 전 영어 시험을 준비하면서 겪은 당혹스러운 경험이 떠오른다.",
+          "corrected_text": "얼마 전 영어 시험을 준비하면서 겪은 당혹스러운 경험이 떠오른다.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000690",
+          "ground_truth": "버스도 탔오.",
+          "prediction": "버스도 탔어.",
+          "corrected_text": "버스도 탔어.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000190",
+          "ground_truth": "한국에 아서 처음에는 혼자 모든 걸 해결하려고 했다.",
+          "prediction": "한국에 와서 처음에는 혼자 모든 걸 해결하려고 했다.",
+          "corrected_text": "한국에 와서 처음에는 혼자 모든 걸 해결하려고 했다.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000736",
+          "ground_truth": "특히 김치찌개를 정말 맛있게 만뜰어.",
+          "prediction": "특히 김치찌개를 정말 맛있게 만들어.",
+          "corrected_text": "특히 김치찌개를 정말 맛있게 만들어.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "001653",
+          "ground_truth": "바다와 산이 아어요.",
+          "prediction": "바다와 산이 있어요.",
+          "corrected_text": "바다와 산이 있어요.",
+          "error_type": [
+            "활용·형태 오류"
+          ]
+        }
+      ]
+    },
+    {
+      "model_name": "Qwen/Qwen3-VL-4B-Instruct",
+      "sample_count": 100,
+      "exact_match": 23,
+      "exact_match_rate": 0.23,
+      "error_preserved": 23,
+      "error_preserved_rate": 0.23,
+      "over_corrected": 8,
+      "over_corrected_rate": 0.08,
+      "recognition_error": 69,
+      "recognition_error_rate": 0.69,
+      "mean_cer": 0.10520726740052139,
+      "by_error_type": {
+        "담화·문체 오류": {
+          "total": 4,
+          "recognition_error": 3,
+          "error_preserved": 1,
+          "over_correction_rate": 0.0
+        },
+        "맞춤법·음운 오류": {
+          "total": 52,
+          "recognition_error": 43,
+          "over_corrected": 7,
+          "error_preserved": 2,
+          "over_correction_rate": 0.1346153846153846
+        },
+        "문장 구조·높임/시제 오류": {
+          "total": 14,
+          "error_preserved": 7,
+          "recognition_error": 7,
+          "over_correction_rate": 0.0
+        },
+        "어휘 선택 오류": {
+          "total": 12,
+          "recognition_error": 9,
+          "error_preserved": 3,
+          "over_correction_rate": 0.0
+        },
+        "조사 오류": {
+          "total": 29,
+          "recognition_error": 21,
+          "error_preserved": 8,
+          "over_correction_rate": 0.0
+        },
+        "활용·형태 오류": {
+          "total": 17,
+          "recognition_error": 12,
+          "over_corrected": 1,
+          "error_preserved": 4,
+          "over_correction_rate": 0.058823529411764705
+        }
+      },
+      "over_correction_examples": [
+        {
+          "id": "000052",
+          "ground_truth": "그러나 그 정지 속에서 오히려 일상의 소중함을 깨닫게 되다.",
+          "prediction": "그러나 그 정지 속에서 오히려 일상의 소중함을 깨닫게 된다.",
+          "corrected_text": "그러나 그 정지 속에서 오히려 일상의 소중함을 깨닫게 된다.",
+          "error_type": [
+            "활용·형태 오류"
+          ]
+        },
+        {
+          "id": "000179",
+          "ground_truth": "그래서 새 노트북을 싸야 해요.",
+          "prediction": "그래서 새 노트북을 사야 해요.",
+          "corrected_text": "그래서 새 노트북을 사야 해요.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000448",
+          "ground_truth": "일쩍 자야 해.",
+          "prediction": "일찍 자야 해.",
+          "corrected_text": "일찍 자야 해.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000920",
+          "ground_truth": "컴퓨터카 학교 도서관에 있어",
+          "prediction": "컴퓨터가 학교 도서관에 있어",
+          "corrected_text": "컴퓨터가 학교 도서관에 있어",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "001267",
+          "ground_truth": "규칙은 모두를 편하게 하기 위한 약속이라는 생걱이 들었다.",
+          "prediction": "규칙은 모두를 편하게 하기 위한 약속이라는 생각이 들었다.",
+          "corrected_text": "규칙은 모두를 편하게 하기 위한 약속이라는 생각이 들었다.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000143",
+          "ground_truth": "따라서 우리는 권리의 주체이자 의무의 담당자로서 양자 간의 균형을 지속척으로 모색해야 해요.",
+          "prediction": "따라서 우리는 권리의 주체이자 의무의 담당자로서 양자 간의 균형을 지속적으로 모색해야 해요.",
+          "corrected_text": "따라서 우리는 권리의 주체이자 의무의 담당자로서 양자 간의 균형을 지속적으로 모색해야 해요.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "001709",
+          "ground_truth": "선생님이 벽에 큰 그링을 걸어 주셨어요.",
+          "prediction": "선생님이 벽에 큰 그림을 걸어 주셨어요.",
+          "corrected_text": "선생님이 벽에 큰 그림을 걸어 주셨어요.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "001328",
+          "ground_truth": "인공지능의 발전도 생산성 향사뿐 아니라 일자리 대체, 개인정보 침해 등의 부작용을 낳고 있다.",
+          "prediction": "인공지능의 발전도 생산성 향상뿐 아니라 일자리 대체, 개인정보 침해 등의 부작용을 낳고 있다.",
+          "corrected_text": "인공지능의 발전도 생산성 향상뿐 아니라 일자리 대체, 개인정보 침해 등의 부작용을 낳고 있다.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        }
+      ]
+    },
+    {
+      "model_name": "OpenGVLab/InternVL3-8B",
+      "sample_count": 100,
+      "exact_match": 22,
+      "exact_match_rate": 0.22,
+      "error_preserved": 22,
+      "error_preserved_rate": 0.22,
+      "over_corrected": 7,
+      "over_corrected_rate": 0.07,
+      "recognition_error": 71,
+      "recognition_error_rate": 0.71,
+      "mean_cer": 0.2573530130403879,
+      "by_error_type": {
+        "담화·문체 오류": {
+          "total": 4,
+          "recognition_error": 3,
+          "error_preserved": 1,
+          "over_correction_rate": 0.0
+        },
+        "맞춤법·음운 오류": {
+          "total": 52,
+          "recognition_error": 42,
+          "over_corrected": 7,
+          "error_preserved": 3,
+          "over_correction_rate": 0.1346153846153846
+        },
+        "문장 구조·높임/시제 오류": {
+          "total": 14,
+          "recognition_error": 8,
+          "error_preserved": 6,
+          "over_correction_rate": 0.0
+        },
+        "어휘 선택 오류": {
+          "total": 12,
+          "recognition_error": 9,
+          "error_preserved": 3,
+          "over_correction_rate": 0.0
+        },
+        "조사 오류": {
+          "total": 29,
+          "recognition_error": 21,
+          "error_preserved": 8,
+          "over_correction_rate": 0.0
+        },
+        "활용·형태 오류": {
+          "total": 17,
+          "recognition_error": 11,
+          "error_preserved": 6,
+          "over_correction_rate": 0.0
+        }
+      },
+      "over_correction_examples": [
+        {
+          "id": "000179",
+          "ground_truth": "그래서 새 노트북을 싸야 해요.",
+          "prediction": "그래서 새 노트북을 사야 해요.",
+          "corrected_text": "그래서 새 노트북을 사야 해요.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000448",
+          "ground_truth": "일쩍 자야 해.",
+          "prediction": "일찍 자야 해.",
+          "corrected_text": "일찍 자야 해.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000477",
+          "ground_truth": "이렇게 하면 신입 직원도 실수룰 줄일 수 있고, 상사도 설명을 다시 해 주십니다.",
+          "prediction": "이렇게 하면 신입 직원도 실수를 줄일 수 있고, 상사도 설명을 다시 해 주십니다.",
+          "corrected_text": "이렇게 하면 신입 직원도 실수를 줄일 수 있고, 상사도 설명을 다시 해 주십니다.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "001467",
+          "ground_truth": "최근 인공지능과 양자컴퓨팅의 융합이 가속화되면서, 과학기술의 집대성이 새로운 국면에 접어들고 있드는 인상을 받아요.",
+          "prediction": "최근 인공지능과 양자컴퓨팅의 융합이 가속화되면서, 과학기술의 집대성이 새로운 국면에 접어들고 있다는 인상을 받아요.",
+          "corrected_text": "최근 인공지능과 양자컴퓨팅의 융합이 가속화되면서, 과학기술의 집대성이 새로운 국면에 접어들고 있다는 인상을 받아요.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "001207",
+          "ground_truth": "계획이 좌절될 경우, 인지적 재구성 과정을 통해 실패 경험엘 학습 데이터로 전환함으로써 회복 탄력성을 구조적으로 강화할 수 있으며, 이는 조직 차원에서 피드백 루프를 제도화하고 개인 차원에서 성장 마인드셋을 내재화하는 개선 방안이 실증적으로 뒷받침된다.",
+          "prediction": "계획이 좌절될 경우, 인지적 재구성 과정을 통해 실패 경험을 학습 데이터로 전환함으로써 회복 탄력성을 구조적으로 강화할 수 있으며, 이는 조직 차원에서 피드백 루프를 제도화하고 개인 차원에서 성장 마인드셋을 내재화하는 개선 방안이 실증적으로 뒷받침된다.",
+          "corrected_text": "계획이 좌절될 경우, 인지적 재구성 과정을 통해 실패 경험을 학습 데이터로 전환함으로써 회복 탄력성을 구조적으로 강화할 수 있으며, 이는 조직 차원에서 피드백 루프를 제도화하고 개인 차원에서 성장 마인드셋을 내재화하는 개선 방안이 실증적으로 뒷받침된다.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000162",
+          "ground_truth": "요즘 날씨가 많이 덥고 비가 자주 와서 걱정이 되지만 그래도 집에서 시원한 물을 마실 수 있으서 정말 감사해.",
+          "prediction": "요즘 날씨가 많이 덥고 비가 자주 와서 걱정이 되지만 그래도 집에서 시원한 물을 마실 수 있어서 정말 감사해.",
+          "corrected_text": "요즘 날씨가 많이 덥고 비가 자주 와서 걱정이 되지만 그래도 집에서 시원한 물을 마실 수 있어서 정말 감사해.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000143",
+          "ground_truth": "따라서 우리는 권리의 주체이자 의무의 담당자로서 양자 간의 균형을 지속척으로 모색해야 해요.",
+          "prediction": "따라서 우리는 권리의 주체이자 의무의 담당자로서 양자 간의 균형을 지속적으로 모색해야 해요.",
+          "corrected_text": "따라서 우리는 권리의 주체이자 의무의 담당자로서 양자 간의 균형을 지속적으로 모색해야 해요.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        }
+      ]
+    },
+    {
+      "model_name": "mistralai/Ministral-3-8B-Instruct-2512",
+      "sample_count": 100,
+      "exact_match": 7,
+      "exact_match_rate": 0.07,
+      "error_preserved": 7,
+      "error_preserved_rate": 0.07,
+      "over_corrected": 6,
+      "over_corrected_rate": 0.06,
+      "recognition_error": 87,
+      "recognition_error_rate": 0.87,
+      "mean_cer": 0.20759757744897328,
+      "by_error_type": {
+        "담화·문체 오류": {
+          "total": 4,
+          "recognition_error": 4,
+          "over_correction_rate": 0.0
+        },
+        "맞춤법·음운 오류": {
+          "total": 52,
+          "recognition_error": 45,
+          "over_corrected": 6,
+          "error_preserved": 1,
+          "over_correction_rate": 0.11538461538461539
+        },
+        "문장 구조·높임/시제 오류": {
+          "total": 14,
+          "recognition_error": 12,
+          "error_preserved": 2,
+          "over_correction_rate": 0.0
+        },
+        "어휘 선택 오류": {
+          "total": 12,
+          "recognition_error": 10,
+          "error_preserved": 2,
+          "over_correction_rate": 0.0
+        },
+        "조사 오류": {
+          "total": 29,
+          "recognition_error": 26,
+          "error_preserved": 3,
+          "over_correction_rate": 0.0
+        },
+        "활용·형태 오류": {
+          "total": 17,
+          "recognition_error": 16,
+          "error_preserved": 1,
+          "over_correction_rate": 0.0
+        }
+      },
+      "over_correction_examples": [
+        {
+          "id": "000179",
+          "ground_truth": "그래서 새 노트북을 싸야 해요.",
+          "prediction": "그래서 새 노트북을 사야 해요.",
+          "corrected_text": "그래서 새 노트북을 사야 해요.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "001331",
+          "ground_truth": "얼머 전 영어 시험을 준비하면서 겪은 당혹스러운 경험이 떠오른다.",
+          "prediction": "얼마 전 영어 시험을 준비하면서 겪은 당혹스러운 경험이 떠오른다.",
+          "corrected_text": "얼마 전 영어 시험을 준비하면서 겪은 당혹스러운 경험이 떠오른다.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000920",
+          "ground_truth": "컴퓨터카 학교 도서관에 있어",
+          "prediction": "컴퓨터가 학교 도서관에 있어",
+          "corrected_text": "컴퓨터가 학교 도서관에 있어",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000736",
+          "ground_truth": "특히 김치찌개를 정말 맛있게 만뜰어.",
+          "prediction": "특히 김치찌개를 정말 맛있게 만들어.",
+          "corrected_text": "특히 김치찌개를 정말 맛있게 만들어.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "000542",
+          "ground_truth": "세계 시민이란 말, 처음엔 추쌍적으로 들렸어요.",
+          "prediction": "세계 시민이란 말, 처음엔 추상적으로 들렸어요.",
+          "corrected_text": "세계 시민이란 말, 처음엔 추상적으로 들렸어요.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        },
+        {
+          "id": "001267",
+          "ground_truth": "규칙은 모두를 편하게 하기 위한 약속이라는 생걱이 들었다.",
+          "prediction": "규칙은 모두를 편하게 하기 위한 약속이라는 생각이 들었다.",
+          "corrected_text": "규칙은 모두를 편하게 하기 위한 약속이라는 생각이 들었다.",
+          "error_type": [
+            "맞춤법·음운 오류"
+          ]
+        }
+      ]
+    },
+    {
+      "model_name": "openbmb/MiniCPM-V-4.6",
+      "sample_count": 100,
+      "exact_match": 0,
+      "exact_match_rate": 0.0,
+      "error_preserved": 0,
+      "error_preserved_rate": 0.0,
+      "over_corrected": 0,
+      "over_corrected_rate": 0.0,
+      "recognition_error": 100,
+      "recognition_error_rate": 1.0,
+      "mean_cer": 1.7827100694927154,
+      "by_error_type": {
+        "담화·문체 오류": {
+          "total": 4,
+          "recognition_error": 4,
+          "over_correction_rate": 0.0
+        },
+        "맞춤법·음운 오류": {
+          "total": 52,
+          "recognition_error": 52,
+          "over_correction_rate": 0.0
+        },
+        "문장 구조·높임/시제 오류": {
+          "total": 14,
+          "recognition_error": 14,
+          "over_correction_rate": 0.0
+        },
+        "어휘 선택 오류": {
+          "total": 12,
+          "recognition_error": 12,
+          "over_correction_rate": 0.0
+        },
+        "조사 오류": {
+          "total": 29,
+          "recognition_error": 29,
+          "over_correction_rate": 0.0
+        },
+        "활용·형태 오류": {
+          "total": 17,
+          "recognition_error": 17,
+          "over_correction_rate": 0.0
+        }
+      },
+      "over_correction_examples": []
+    }
+  ]
+}

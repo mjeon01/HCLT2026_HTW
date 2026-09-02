@@ -1,0 +1,38 @@
+{
+  "status": "diagnostic",
+  "warning": "Legacy predictions were truncated at the first generated user/assistant role token. Re-run full inference for paper-ready metrics.",
+  "postprocessing": "Unicode NFC, whitespace collapse, punctuation removal, then truncate legacy generation at the first role token.",
+  "normal": {
+    "sample_count": 2000,
+    "mean_cer": 0.003586189057505867,
+    "corpus_cer": 0.003109627099635511,
+    "normal_preservation_count": 1809,
+    "normal_preservation_rate": 0.9045,
+    "total_distance": 244,
+    "total_characters": 78466
+  },
+  "error": {
+    "sample_count": 1825,
+    "mean_cer": 0.018210094768855305,
+    "corpus_cer": 0.01401361152064811,
+    "error_span_count": 2811,
+    "over_corrected_span_count": 481,
+    "over_correction_rate": 0.1711134827463536,
+    "error_preserved_span_count": 2178,
+    "error_preservation_rate": 0.7748132337246532,
+    "other_span_count": 152,
+    "other_span_rate": 0.05407328352899324,
+    "sample_classification": {
+      "error_preserved": 1137,
+      "other_recognition_error": 275,
+      "over_corrected": 413
+    },
+    "total_distance": 941,
+    "total_characters": 67149,
+    "sample_classification_rates": {
+      "error_preserved": 0.623013698630137,
+      "other_recognition_error": 0.1506849315068493,
+      "over_corrected": 0.2263013698630137
+    }
+  }
+}

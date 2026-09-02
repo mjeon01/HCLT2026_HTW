@@ -1,0 +1,471 @@
+{
+  "dataset": "data/benchmark/eval_synthetic_error_2000.jsonl",
+  "target_sample_count": 1825,
+  "prompt": "손글씨 이미지에 작성된 내용을 그대로 텍스트로 인식하세요.\n맞춤법, 띄어쓰기, 조사, 어미, 문법 오류를 수정하거나\n자연스러운 표현으로 바꾸지 마세요.\n이미지에 보이는 내용을 그대로 출력하세요.",
+  "classification_rule": "strict full-string: prediction==ground_truth => error_preserved; prediction==corrected_text => over_corrected; otherwise recognition_error",
+  "timing": "Seconds per image; includes image preprocessing, generation, and decoding; excludes model loading, scoring, and file writing.",
+  "models": [
+    {
+      "sample_count": 1825,
+      "mean_cer": 0.0479562047549832,
+      "corpus_cer": 0.031710501772057455,
+      "character_accuracy": 0.9682894982279425,
+      "error_preserved": 646,
+      "error_preserved_rate": 0.353972602739726,
+      "over_corrected": 298,
+      "over_corrected_rate": 0.1632876712328767,
+      "recognition_error": 881,
+      "recognition_error_rate": 0.4827397260273973,
+      "closer_to_ground_truth": 1137,
+      "closer_to_ground_truth_rate": 0.623013698630137,
+      "closer_to_corrected": 492,
+      "closer_to_corrected_rate": 0.26958904109589044,
+      "closer_tie": 196,
+      "closer_tie_rate": 0.1073972602739726,
+      "mean_inference_time": 1.8849676716914527,
+      "total_inference_time": 3440.0660008369014,
+      "by_error_type": {
+        "담화·문체 오류": {
+          "total": 99,
+          "error_preserved": 41,
+          "closer_to_ground_truth": 82,
+          "recognition_error": 57,
+          "closer_to_tie": 10,
+          "closer_to_corrected": 7,
+          "over_corrected": 1
+        },
+        "맞춤법·음운 오류": {
+          "total": 892,
+          "recognition_error": 544,
+          "closer_to_ground_truth": 319,
+          "closer_to_tie": 153,
+          "error_preserved": 97,
+          "over_corrected": 251,
+          "closer_to_corrected": 420
+        },
+        "문장 구조·높임/시제 오류": {
+          "total": 310,
+          "error_preserved": 211,
+          "closer_to_ground_truth": 294,
+          "recognition_error": 95,
+          "closer_to_corrected": 9,
+          "closer_to_tie": 7,
+          "over_corrected": 4
+        },
+        "어휘 선택 오류": {
+          "total": 224,
+          "recognition_error": 138,
+          "closer_to_corrected": 42,
+          "closer_to_ground_truth": 162,
+          "error_preserved": 71,
+          "over_corrected": 15,
+          "closer_to_tie": 20
+        },
+        "조사 오류": {
+          "total": 542,
+          "error_preserved": 220,
+          "closer_to_ground_truth": 426,
+          "recognition_error": 313,
+          "closer_to_tie": 77,
+          "over_corrected": 9,
+          "closer_to_corrected": 39
+        },
+        "활용·형태 오류": {
+          "total": 275,
+          "error_preserved": 81,
+          "closer_to_ground_truth": 185,
+          "over_corrected": 29,
+          "closer_to_corrected": 59,
+          "recognition_error": 165,
+          "closer_to_tie": 31
+        }
+      },
+      "model_alias": "qwen35-9b",
+      "model_name": "Qwen/Qwen3.5-9B",
+      "result_file": "results/error_handwriting_eval/qwen35_9b_results.jsonl"
+    },
+    {
+      "sample_count": 1825,
+      "mean_cer": 0.0618173629725196,
+      "corpus_cer": 0.041754552107098275,
+      "character_accuracy": 0.9582454478929017,
+      "error_preserved": 540,
+      "error_preserved_rate": 0.2958904109589041,
+      "over_corrected": 215,
+      "over_corrected_rate": 0.1178082191780822,
+      "recognition_error": 1070,
+      "recognition_error_rate": 0.5863013698630137,
+      "closer_to_ground_truth": 1162,
+      "closer_to_ground_truth_rate": 0.6367123287671232,
+      "closer_to_corrected": 433,
+      "closer_to_corrected_rate": 0.23726027397260274,
+      "closer_tie": 230,
+      "closer_tie_rate": 0.12602739726027398,
+      "mean_inference_time": 1.8055378050015194,
+      "total_inference_time": 3295.1064941277727,
+      "by_error_type": {
+        "담화·문체 오류": {
+          "total": 99,
+          "recognition_error": 56,
+          "closer_to_ground_truth": 83,
+          "closer_to_tie": 11,
+          "error_preserved": 42,
+          "closer_to_corrected": 5,
+          "over_corrected": 1
+        },
+        "맞춤법·음운 오류": {
+          "total": 892,
+          "recognition_error": 630,
+          "closer_to_ground_truth": 349,
+          "closer_to_tie": 177,
+          "over_corrected": 176,
+          "closer_to_corrected": 366,
+          "error_preserved": 86
+        },
+        "문장 구조·높임/시제 오류": {
+          "total": 310,
+          "error_preserved": 169,
+          "closer_to_ground_truth": 285,
+          "recognition_error": 133,
+          "closer_to_corrected": 19,
+          "over_corrected": 8,
+          "closer_to_tie": 6
+        },
+        "어휘 선택 오류": {
+          "total": 224,
+          "recognition_error": 154,
+          "closer_to_corrected": 36,
+          "closer_to_ground_truth": 164,
+          "error_preserved": 60,
+          "closer_to_tie": 24,
+          "over_corrected": 10
+        },
+        "조사 오류": {
+          "total": 542,
+          "error_preserved": 177,
+          "closer_to_ground_truth": 435,
+          "recognition_error": 358,
+          "closer_to_tie": 71,
+          "closer_to_corrected": 36,
+          "over_corrected": 7
+        },
+        "활용·형태 오류": {
+          "total": 275,
+          "error_preserved": 73,
+          "closer_to_ground_truth": 190,
+          "over_corrected": 19,
+          "closer_to_corrected": 41,
+          "recognition_error": 183,
+          "closer_to_tie": 44
+        }
+      },
+      "model_alias": "qwen35-4b",
+      "model_name": "Qwen/Qwen3.5-4B",
+      "result_file": "results/error_handwriting_eval/qwen35_4b_results.jsonl"
+    },
+    {
+      "sample_count": 1825,
+      "mean_cer": 0.0899950098717059,
+      "corpus_cer": 0.056533654742944056,
+      "character_accuracy": 0.943466345257056,
+      "error_preserved": 375,
+      "error_preserved_rate": 0.2054794520547945,
+      "over_corrected": 139,
+      "over_corrected_rate": 0.07616438356164383,
+      "recognition_error": 1311,
+      "recognition_error_rate": 0.7183561643835616,
+      "closer_to_ground_truth": 1198,
+      "closer_to_ground_truth_rate": 0.6564383561643835,
+      "closer_to_corrected": 362,
+      "closer_to_corrected_rate": 0.19835616438356166,
+      "closer_tie": 265,
+      "closer_tie_rate": 0.14520547945205478,
+      "mean_inference_time": 0.8396356369386593,
+      "total_inference_time": 1532.3350374130532,
+      "by_error_type": {
+        "담화·문체 오류": {
+          "total": 99,
+          "recognition_error": 84,
+          "closer_to_ground_truth": 85,
+          "closer_to_tie": 9,
+          "closer_to_corrected": 5,
+          "error_preserved": 14,
+          "over_corrected": 1
+        },
+        "맞춤법·음운 오류": {
+          "total": 892,
+          "recognition_error": 708,
+          "closer_to_corrected": 305,
+          "closer_to_tie": 211,
+          "closer_to_ground_truth": 376,
+          "over_corrected": 115,
+          "error_preserved": 69
+        },
+        "문장 구조·높임/시제 오류": {
+          "total": 310,
+          "error_preserved": 126,
+          "closer_to_ground_truth": 285,
+          "recognition_error": 180,
+          "closer_to_tie": 14,
+          "over_corrected": 4,
+          "closer_to_corrected": 11
+        },
+        "어휘 선택 오류": {
+          "total": 224,
+          "recognition_error": 180,
+          "closer_to_corrected": 30,
+          "error_preserved": 36,
+          "closer_to_ground_truth": 173,
+          "closer_to_tie": 21,
+          "over_corrected": 8
+        },
+        "조사 오류": {
+          "total": 542,
+          "error_preserved": 122,
+          "closer_to_ground_truth": 448,
+          "recognition_error": 418,
+          "closer_to_tie": 70,
+          "closer_to_corrected": 24,
+          "over_corrected": 2
+        },
+        "활용·형태 오류": {
+          "total": 275,
+          "recognition_error": 215,
+          "closer_to_ground_truth": 201,
+          "closer_to_corrected": 43,
+          "closer_to_tie": 31,
+          "error_preserved": 47,
+          "over_corrected": 13
+        }
+      },
+      "model_alias": "qwen3-vl-4b",
+      "model_name": "Qwen/Qwen3-VL-4B-Instruct",
+      "result_file": "results/error_handwriting_eval/qwen3_vl_4b_results.jsonl"
+    },
+    {
+      "sample_count": 1825,
+      "mean_cer": 0.19497817766135203,
+      "corpus_cer": 0.11247901510912144,
+      "character_accuracy": 0.8875209848908786,
+      "error_preserved": 417,
+      "error_preserved_rate": 0.2284931506849315,
+      "over_corrected": 133,
+      "over_corrected_rate": 0.07287671232876712,
+      "recognition_error": 1275,
+      "recognition_error_rate": 0.6986301369863014,
+      "closer_to_ground_truth": 1217,
+      "closer_to_ground_truth_rate": 0.6668493150684931,
+      "closer_to_corrected": 328,
+      "closer_to_corrected_rate": 0.17972602739726026,
+      "closer_tie": 280,
+      "closer_tie_rate": 0.15342465753424658,
+      "mean_inference_time": 1.5770738323614613,
+      "total_inference_time": 2878.159744059667,
+      "by_error_type": {
+        "담화·문체 오류": {
+          "total": 99,
+          "recognition_error": 70,
+          "closer_to_ground_truth": 88,
+          "closer_to_tie": 8,
+          "error_preserved": 28,
+          "over_corrected": 1,
+          "closer_to_corrected": 3
+        },
+        "맞춤법·음운 오류": {
+          "total": 892,
+          "recognition_error": 702,
+          "closer_to_ground_truth": 400,
+          "closer_to_tie": 213,
+          "error_preserved": 83,
+          "closer_to_corrected": 279,
+          "over_corrected": 107
+        },
+        "문장 구조·높임/시제 오류": {
+          "total": 310,
+          "recognition_error": 182,
+          "closer_to_ground_truth": 288,
+          "error_preserved": 126,
+          "closer_to_tie": 18,
+          "over_corrected": 2,
+          "closer_to_corrected": 4
+        },
+        "어휘 선택 오류": {
+          "total": 224,
+          "recognition_error": 183,
+          "closer_to_corrected": 33,
+          "error_preserved": 33,
+          "closer_to_ground_truth": 171,
+          "closer_to_tie": 20,
+          "over_corrected": 8
+        },
+        "조사 오류": {
+          "total": 542,
+          "error_preserved": 148,
+          "closer_to_ground_truth": 449,
+          "recognition_error": 387,
+          "closer_to_tie": 67,
+          "closer_to_corrected": 26,
+          "over_corrected": 7
+        },
+        "활용·형태 오류": {
+          "total": 275,
+          "recognition_error": 205,
+          "closer_to_ground_truth": 208,
+          "over_corrected": 13,
+          "closer_to_corrected": 34,
+          "error_preserved": 57,
+          "closer_to_tie": 33
+        }
+      },
+      "model_alias": "internvl3-8b",
+      "model_name": "OpenGVLab/InternVL3-8B",
+      "result_file": "results/error_handwriting_eval/internvl3_8b_results.jsonl"
+    },
+    {
+      "sample_count": 1825,
+      "mean_cer": 0.18593279216960645,
+      "corpus_cer": 0.13839266497352676,
+      "character_accuracy": 0.8616073350264732,
+      "error_preserved": 143,
+      "error_preserved_rate": 0.07835616438356165,
+      "over_corrected": 102,
+      "over_corrected_rate": 0.05589041095890411,
+      "recognition_error": 1580,
+      "recognition_error_rate": 0.8657534246575342,
+      "closer_to_ground_truth": 1043,
+      "closer_to_ground_truth_rate": 0.5715068493150685,
+      "closer_to_corrected": 433,
+      "closer_to_corrected_rate": 0.23726027397260274,
+      "closer_tie": 349,
+      "closer_tie_rate": 0.19123287671232878,
+      "mean_inference_time": 0.6959143642642318,
+      "total_inference_time": 1270.043714782223,
+      "by_error_type": {
+        "담화·문체 오류": {
+          "total": 99,
+          "recognition_error": 90,
+          "closer_to_ground_truth": 81,
+          "closer_to_tie": 14,
+          "closer_to_corrected": 4,
+          "error_preserved": 8,
+          "over_corrected": 1
+        },
+        "맞춤법·음운 오류": {
+          "total": 892,
+          "recognition_error": 786,
+          "closer_to_tie": 243,
+          "closer_to_ground_truth": 310,
+          "closer_to_corrected": 339,
+          "over_corrected": 78,
+          "error_preserved": 28
+        },
+        "문장 구조·높임/시제 오류": {
+          "total": 310,
+          "recognition_error": 255,
+          "closer_to_ground_truth": 254,
+          "error_preserved": 45,
+          "closer_to_tie": 25,
+          "closer_to_corrected": 31,
+          "over_corrected": 10
+        },
+        "어휘 선택 오류": {
+          "total": 224,
+          "recognition_error": 208,
+          "closer_to_corrected": 31,
+          "closer_to_ground_truth": 158,
+          "error_preserved": 14,
+          "closer_to_tie": 35,
+          "over_corrected": 2
+        },
+        "조사 오류": {
+          "total": 542,
+          "recognition_error": 490,
+          "closer_to_ground_truth": 394,
+          "closer_to_tie": 99,
+          "error_preserved": 47,
+          "closer_to_corrected": 49,
+          "over_corrected": 5
+        },
+        "활용·형태 오류": {
+          "total": 275,
+          "recognition_error": 250,
+          "closer_to_corrected": 55,
+          "over_corrected": 9,
+          "closer_to_tie": 51,
+          "closer_to_ground_truth": 169,
+          "error_preserved": 16
+        }
+      },
+      "model_alias": "ministral3-8b",
+      "model_name": "mistralai/Ministral-3-8B-Instruct-2512",
+      "result_file": "results/error_handwriting_eval/ministral3_8b_results.jsonl"
+    },
+    {
+      "sample_count": 1825,
+      "mean_cer": 1.54388131671091,
+      "corpus_cer": 1.2215143558176575,
+      "character_accuracy": 0.0,
+      "error_preserved": 0,
+      "error_preserved_rate": 0.0,
+      "over_corrected": 0,
+      "over_corrected_rate": 0.0,
+      "recognition_error": 1825,
+      "recognition_error_rate": 1.0,
+      "closer_to_ground_truth": 441,
+      "closer_to_ground_truth_rate": 0.24164383561643835,
+      "closer_to_corrected": 218,
+      "closer_to_corrected_rate": 0.11945205479452055,
+      "closer_tie": 1166,
+      "closer_tie_rate": 0.6389041095890411,
+      "mean_inference_time": 0.9731091532070343,
+      "total_inference_time": 1775.9242046028376,
+      "by_error_type": {
+        "담화·문체 오류": {
+          "total": 99,
+          "recognition_error": 99,
+          "closer_to_ground_truth": 46,
+          "closer_to_tie": 30,
+          "closer_to_corrected": 23
+        },
+        "맞춤법·음운 오류": {
+          "total": 892,
+          "recognition_error": 892,
+          "closer_to_tie": 663,
+          "closer_to_ground_truth": 120,
+          "closer_to_corrected": 109
+        },
+        "문장 구조·높임/시제 오류": {
+          "total": 310,
+          "recognition_error": 310,
+          "closer_to_ground_truth": 113,
+          "closer_to_corrected": 62,
+          "closer_to_tie": 135
+        },
+        "어휘 선택 오류": {
+          "total": 224,
+          "recognition_error": 224,
+          "closer_to_ground_truth": 55,
+          "closer_to_tie": 145,
+          "closer_to_corrected": 24
+        },
+        "조사 오류": {
+          "total": 542,
+          "recognition_error": 542,
+          "closer_to_tie": 292,
+          "closer_to_ground_truth": 196,
+          "closer_to_corrected": 54
+        },
+        "활용·형태 오류": {
+          "total": 275,
+          "recognition_error": 275,
+          "closer_to_ground_truth": 77,
+          "closer_to_tie": 166,
+          "closer_to_corrected": 32
+        }
+      },
+      "model_alias": "minicpm-v46",
+      "model_name": "openbmb/MiniCPM-V-4.6",
+      "result_file": "results/error_handwriting_eval/minicpm_v46_results.jsonl"
+    }
+  ]
+}
